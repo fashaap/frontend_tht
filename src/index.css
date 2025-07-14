@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+/* Tambahkan ke App.css atau global stylesheet */
+.slick-slide > div {
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-top: 10px ;
+  margin-bottom: 10px ;
+}
+
+.slick-list {
+  margin-left: -10px;
+  margin-right: -10px;
+}
+

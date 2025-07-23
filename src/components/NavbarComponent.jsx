@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import burgerMenuOpen from "../assets/burger_menu.svg";
 import burgerMenuClose from "../assets/burger_menu_close.svg";
 import logoTHT from "../assets/LOGO_THT_3.svg";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const NavbarComponent = () => {
   const [dropDown, setDropdown] = useState(false);
@@ -22,6 +22,16 @@ const NavbarComponent = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
+  const navLinks = [
+    { id: 1, name: "Home", path: "/" },
+    { id: 2, name: "Contact", path: "/contact" },
+    { id: 3, name: "Sejarah", path: "/article" },
+    { id: 4, name: "Maps", path: "/maps" },
+    { id: 5, name: "Calendar", path: "/calendar" },
+  ];
+
+  const location = useLocation();
 
   return (
     <nav
@@ -55,43 +65,36 @@ const NavbarComponent = () => {
           {/* Logo + Navigation (desktop) */}
           <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-between">
             <div className="flex shrink-0 items-center">
-              <img
-                className="h-10 w-24 md:h-13 md:w-30 "
-                src={logoTHT}
-                alt="Your Company"
-              />
+              <Link to="/">
+                <img
+                  className="h-10 w-24 md:h-13 md:w-30 "
+                  src={logoTHT}
+                  alt="logo_tht"
+                />
+              </Link>
             </div>
 
             <div className="hidden sm:ml-6 sm:block">
               <div className="flex h-full items-center space-x-4">
-                <Link
-                  to="/"
-                  className={`rounded-md px-3 py-2 text-sm md:text-[16px] font-medium text-white ${
-                    scrollY >= 22
-                      ? "hover:bg-orange-600"
-                      : "hover:bg-white/10 hover:backdrop-blur-md"
-                  } hover:text-white`}
-                >
-                  Contact
-                </Link>
-                <Link
-                  to="/team"
-                  className="rounded-md px-3 py-2 text-sm md:text-[16px] font-medium text-white hover:bg-orange-600 hover:text-white"
-                >
-                  Team
-                </Link>
-                <Link
-                  to="/projects"
-                  className="rounded-md px-3 py-2 text-sm md:text-[16px] font-medium text-white hover:bg-orange-600 hover:text-white"
-                >
-                  Projects
-                </Link>
-                <Link
-                  to="/calendar"
-                  className="rounded-md px-3 py-2 text-sm md:text-[16px] font-medium text-white hover:bg-orange-600 hover:text-white"
-                >
-                  Calendar
-                </Link>
+                {navLinks.map((index) => {
+                  const isActive = location.pathname === index.path;
+
+                  return (
+                    <Link
+                      key={index.id}
+                      to={index.path}
+                      className={`rounded-full px-3 py-2 text-sm md:text-[16px] font-medium text-white
+              ${isActive ? "bg-white/10 backdrop-blur-md" : ""}
+              ${
+                isActive >= 22
+                  ? "hover:bg-orange-600"
+                  : "hover:bg-white/10 hover:backdrop-blur-md"
+              } hover:text-white`}
+                    >
+                      {index.name}
+                    </Link>
+                  );
+                })}
               </div>
             </div>
           </div>
@@ -108,17 +111,27 @@ const NavbarComponent = () => {
             id="mobile-menu"
           >
             <div className="space-y-1 px-2 pt-2 pb-3 ">
-              <Link
-                to="/Contact"
-                className={`block rounded-md ${
-                  scrollY >= 22
-                    ? "hover:bg-orange-600"
-                    : "hover:bg-white/10 hover:backdrop-blur-md"
-                } px-3 py-2 text-base font-medium text-white`}
-              >
-                <p className={`${
-              scrollY >= 22 ? "bg-orange-500" : "bg-white text-black"}`}>Contact</p>
-              </Link>
+              {navLinks.map((index) => {
+                const isActive = location.pathname === index.path;
+                return (
+                  <Link
+                    to={index.path}
+                    className={`block rounded-md ${
+                      isActive >= 22
+                        ? "hover:bg-orange-600"
+                        : "hover:bg-white/10 hover:backdrop-blur-md"
+                    } px-3 py-2 text-base font-medium `}
+                  >
+                    <p
+                      className={`${
+                        isActive >= 22 ? "bg-orange-500" : " "
+                      }  text-white`}
+                    >
+                      {index.name}
+                    </p>
+                  </Link>
+                );
+              })}
             </div>
           </div>
         </div>

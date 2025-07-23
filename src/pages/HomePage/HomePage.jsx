@@ -21,6 +21,9 @@ import dokumentasi02 from "../../assets/dokumentasi_02.jpg";
 import dokumentasi03 from "../../assets/dokumentasi_03.jpg";
 
 import imageContent3 from "../../assets/foto_grup.jpg";
+import mapSearchSVG from "../../assets/navigation-94.svg";
+
+import { TbMapSearch } from "react-icons/tb";
 
 const HomePage = () => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
@@ -74,8 +77,9 @@ const HomePage = () => {
 
   const settings = {
     dots: true,
+    arrows: false,
     autoplay: true,
-    infinite: false,
+    infinite: true,
     speed: 500,
     slidesToShow: 4,
     slidesToScroll: 1,
@@ -104,38 +108,39 @@ const HomePage = () => {
     ],
   };
 
-  const settings2 = {
-    dots: true,
-    autoplay: true,
-    infinite: false,
-    speed: 500,
-    slidesToShow: 4,
-    slidesToScroll: 1,
-    responsive: [
-      {
-        breakpoint: 518,
-        settings: {
-          slidesToShow: 1,
-          dots: false,
-          speed: 700,
-        },
-      },
-      {
-        breakpoint: 998,
-        settings: {
-          slidesToShow: 2,
-          dots: false,
-          speed: 700,
-        },
-      },
-      {
-        breakpoint: 1300,
-        settings: {
-          slidesToShow: 3,
-        },
-      },
-    ],
-  };
+  // const settings2 = {
+  //   dots: true,
+  //   arrows: false,
+  //   autoplay: true,
+  //   infinite: true,
+  //   speed: 500,
+  //   slidesToShow: 4,
+  //   slidesToScroll: 1,
+  //   responsive: [
+  //     {
+  //       breakpoint: 518,
+  //       settings: {
+  //         slidesToShow: 1,
+  //         dots: false,
+  //         speed: 700,
+  //       },
+  //     },
+  //     {
+  //       breakpoint: 998,
+  //       settings: {
+  //         slidesToShow: 2,
+  //         dots: false,
+  //         speed: 700,
+  //       },
+  //     },
+  //     {
+  //       breakpoint: 1300,
+  //       settings: {
+  //         slidesToShow: 3,
+  //       },
+  //     },
+  //   ],
+  // };
 
   const dataVisualisasi = [
     {
@@ -208,36 +213,36 @@ const HomePage = () => {
     },
   ];
 
-  const dataTestimoni = [
-    {
-      id: 1,
-      profile_image: "https://picsum.photos/150",
-      name: "Ayu Lestari",
-      testimonial:
-        "Saya jadi tahu banyak hal yang sebelumnya tidak pernah saya dengar tentang sejarah lokal. Kegiatannya seru dan sangat informatif!",
-    },
-    {
-      id: 2,
-      profile_image: "https://picsum.photos/150",
-      name: "Rizky Pratama",
-      testimonial:
-        "Pengalaman mengikuti kegiatan ini benar-benar membuka mata saya akan pentingnya melestarikan warisan budaya. Terima kasih atas kesempatannya!",
-    },
-    {
-      id: 3,
-      profile_image: "https://picsum.photos/150",
-      name: "Siti Nurhaliza",
-      testimonial:
-        "Melalui kegiatan ini, saya jadi merasa lebih dekat dengan sejarah kampung halaman sendiri. Menyenangkan sekaligus mendidik.",
-    },
-    {
-      id: 4,
-      profile_image: "https://picsum.photos/150",
-      name: "Daniel Setiawan",
-      testimonial:
-        "Bukan sekadar belajar sejarah, tapi juga membangun rasa cinta terhadap daerah sendiri. Kegiatan ini luar biasa!",
-    },
-  ];
+  // const dataTestimoni = [
+  //   {
+  //     id: 1,
+  //     profile_image: "https://picsum.photos/150",
+  //     name: "Ayu Lestari",
+  //     testimonial:
+  //       "Saya jadi tahu banyak hal yang sebelumnya tidak pernah saya dengar tentang sejarah lokal. Kegiatannya seru dan sangat informatif!",
+  //   },
+  //   {
+  //     id: 2,
+  //     profile_image: "https://picsum.photos/150",
+  //     name: "Rizky Pratama",
+  //     testimonial:
+  //       "Pengalaman mengikuti kegiatan ini benar-benar membuka mata saya akan pentingnya melestarikan warisan budaya. Terima kasih atas kesempatannya!",
+  //   },
+  //   {
+  //     id: 3,
+  //     profile_image: "https://picsum.photos/150",
+  //     name: "Siti Nurhaliza",
+  //     testimonial:
+  //       "Melalui kegiatan ini, saya jadi merasa lebih dekat dengan sejarah kampung halaman sendiri. Menyenangkan sekaligus mendidik.",
+  //   },
+  //   {
+  //     id: 4,
+  //     profile_image: "https://picsum.photos/150",
+  //     name: "Daniel Setiawan",
+  //     testimonial:
+  //       "Bukan sekadar belajar sejarah, tapi juga membangun rasa cinta terhadap daerah sendiri. Kegiatan ini luar biasa!",
+  //   },
+  // ];
 
   return (
     <>
@@ -263,7 +268,7 @@ const HomePage = () => {
               </p>
             </div>
             <div className="mt-5">
-              <Link className="py-2.5 px-5 pb-3 mb-2 text-sm lg:text-md font-medium  text-gray-100 hover:text-white bg-white/10 backdrop-blur-xl rounded-full border border-white hover:border-orange-500 hover:bg-orange-500">
+              <Link className="py-2.5 px-5 pb-3 mb-2 text-sm lg:text-md font-medium  text-gray-100 hover:text-black bg-white/10 backdrop-blur-xl rounded-full border border-white hover:border-white hover:bg-white">
                 Hubungi Kami
               </Link>
             </div>
@@ -273,7 +278,7 @@ const HomePage = () => {
       </div>
 
       {/* main */}
-      <div className=" top-100 left-0 right-0  mb-10 mt-6">
+      <div className="container mx-auto max-w-fit h-full pb-4 pt-6   px-5 lg:px-20 xl:px-40">
         <div className="container mx-auto h-full px-5 pb-5 lg:px-20 xl:px-40">
           <div className="flex items-center justify-center gap-4">
             <div className="flex-grow border-t border-gray-300 "></div>
@@ -284,10 +289,13 @@ const HomePage = () => {
           </div>
         </div>
 
-        <div className="container mx-auto lg:mb-5 px-4">
-          <Slider {...settings}>
+        <div className="container mx-auto lg:mb-5 ">
+          <Slider
+            {...settings}
+            className=" [&_.slick-arrow]:hidden sm:[&_.slick-arrow]:block"
+          >
             {dataVisualisasi.map((item, index) => (
-              <div key={index} className="px-2">
+              <div key={index}>
                 <div className="rounded-2xl transition transform hover:scale-105 duration-300 w-full h-40">
                   <img
                     src={item.src_image}
@@ -300,9 +308,34 @@ const HomePage = () => {
           </Slider>
         </div>
 
-        <div className="container mx-auto max-w-8xl h-full py-4 px-5 lg:px-20 xl:px-40">
+        <div className="flex flex-col lg:flex-row items-center lg:gap-6  py-15   ">
+          <img
+            className="w-60 md:w-72 lg:w-80 h-auto object-contain"
+            src={mapSearchSVG}
+            alt="adventure"
+          />
+
+          <div className="text-center lg:text-justify flex-1 space-y-6">
+            <h1 className="text-lg md:text-xl lg:text-2xl font-medium leading-relaxed mb-5">
+              Jelajahi berbagai tempat bangunan bersejarah di Tjitjalengka
+              melalui peta interaktif yang tersedia di website kami, dan temukan
+              artikel-artikel menarik seputar sejarah yang bisa Anda akses
+              melalui portal di bawah ini.
+            </h1>
+
+            <Link
+              to="/maps"
+              className="inline-block border-2 px-6 py-2 rounded-full font-medium hover:border-black hover:bg-black hover:text-white transition "
+            >
+              Telusuri
+              <TbMapSearch className="inline-block ms-2 mb-1" />
+            </Link>
+          </div>
+        </div>
+
+        <div className="container mx-auto lg:px-5 ">
           {/* content 3*/}
-          <div className="border-b pb-2 mb-8 border-gray-300 ">
+          <div className="border-b pb-2 my-8 border-gray-300 ">
             <h1 className="text-2xl font-medium mb-2">
               Menjaga Jejak, Menghidupkan Sejarah
             </h1>
@@ -316,13 +349,13 @@ const HomePage = () => {
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-6  gap-5">
+          <div className="grid sm:grid-cols-10   gap-5 lg:pb-20">
             <img
-              className="col-span-3 w-full h-full rounded-2xl shadow-lg object-cover"
+              className="col-span-5 w-full h-full rounded-2xl shadow-lg object-cover"
               src={imageContent3}
               alt="image"
             />
-            <div className="col-span-3 w-full">
+            <div className="col-span-5 w-full">
               <div className="flex-row">
                 <div className="mb-5">
                   <h1 className="font-medium text-lg m-0 p-0">Walking Tour</h1>
@@ -365,12 +398,15 @@ const HomePage = () => {
           </div>
 
           {/* tagline 2 */}
-          <div className="flex items-center justify-center gap-4 my-10">
-            <div className="flex-grow border-t border-gray-300 "></div>
-            <h1 className="text-lg md:text-xl lg:text-2xl font-semibold text-center whitespace-nowrap">
-              Dokumentasi kegiatan
-            </h1>
-            <div className="flex-grow border-t border-gray-300 "></div>
+
+          <div className="container mx-auto h-full px-5 lg:px-20 xl:px-40 py-10">
+            <div className="flex items-center justify-center gap-4">
+              <div className="flex-grow border-t border-gray-300 "></div>
+              <h1 className="text-lg md:text-xl lg:text-2xl font-semibold text-center whitespace-nowrap">
+                Dokumentasi Kegiatan
+              </h1>
+              <div className="flex-grow border-t border-gray-300 "></div>
+            </div>
           </div>
 
           <div className="grid lg:grid-cols-3 gap-5">
@@ -383,19 +419,20 @@ const HomePage = () => {
                     alt={items.alt_image}
                     className="absolute inset-0 h-45 lg:h-full w-full rounded-2xl object-cover shadow-lg brightness-75"
                   />
-                  <div className="absolute inset-0 h-45 lg:h-full bg-gradient-to-t from-orange-500/50 rounded-2xl" />
+                  <div className="absolute inset-0 h-45 lg:h-full bg-gradient-to-t from-orange-500/50 rounded-2xl transition-opacity duration-500 ease-in-out hover:opacity-0" />
                 </div>
               ))}
           </div>
           <div className="container mx-auto   items-center justify-center w-35 mt-8">
-            <Link className="border-2 px-5 border-orange-500 text-orange-500 font-medium hover:bg-orange-500 hover:text-white w-auto text-center pb-3 py-2 rounded-full">
+            <Link
+              to="/documentation"
+              className="border-2 px-5 border-orange-500 text-orange-500 font-medium hover:bg-orange-500 hover:text-white w-auto text-center pb-3 py-2 rounded-full"
+            >
               Selengkapnya
             </Link>
           </div>
-        </div>
 
-        <div className="container mx-auto max-w-8xl h-full py-4 px-5 lg:px-20 xl:px-40">
-          <div className="border-b pb-2 mb-8 border-gray-300 ">
+          {/* <div className="border-b pb-2 my-8 border-gray-300 ">
             <h1 className="text-2xl font-medium mb-2">Apa Kata Mereka?</h1>
             <p className="text-justify">
               Dengarkan langsung pengalaman teman-teman yang telah mengikuti
@@ -404,13 +441,16 @@ const HomePage = () => {
               memperluas wawasan, tetapi juga menumbuhkan rasa penghargaan
               terhadap warisan budaya dan sejarah di sekitar kita.
             </p>
-          </div>
+          </div>  */}
 
-          <Slider {...settings2}>
+          {/* <Slider
+            {...settings2}
+            className=" [&_.slick-arrow]:hidden sm:[&_.slick-arrow]:block mb-5"
+          >
             {dataTestimoni.slice(0, 4).map((item, index) => (
               <div key={index} className="px-2">
                 {" "}
-                {/* Spacing antar-slide */}
+                {/* Spacing antar-slide 
                 <div className="h-full w-full rounded-2xl bg-orange-500 shadow-md">
                   <div className="flex flex-col items-center justify-center h-full p-4">
                     <img
@@ -428,7 +468,7 @@ const HomePage = () => {
                 </div>
               </div>
             ))}
-          </Slider>
+          </Slider> */}
         </div>
       </div>
     </>

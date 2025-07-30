@@ -46,7 +46,7 @@ const ArticlesHomePage = () => {
             </p>
           ) : (
             filteredArticles.map((article) => (
-              <Link to={`/article/${article.id}`} key={article.id}>
+              <Link to={`/article/${article.id}/${`${article.name.replace(/\s+/g, "-")}`}`} key={article.id}>
                 <div className="flex flex-col md:flex-row items-start mb-5 bg-white rounded-xl shadow-sm hover:shadow-md transition duration-300 overflow-hidden">
                   <img
                     src={article.thumbnail}

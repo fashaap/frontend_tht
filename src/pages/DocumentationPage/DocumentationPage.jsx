@@ -1,46 +1,24 @@
 import React from "react";
 import { Link} from "react-router-dom";
+import documentationGallery from "../../jsons/GalleryItems";
 
 const DocumentationPage = () => {
 
 
-  const galleryItems = [
-    {
-      id: 1,
-      title: "Tjitjalengka Historical X Cerita Bandung",
-      imageUrl: "https://picsum.photos/200/300",
-    },
-    {
-      id: 2,
-      title: "Tjitjalengka Historical X Mahasiswa UNPAS",
-      imageUrl: "https://picsum.photos/200/300",
-    },
-    {
-      id: 3,
-      title: "Tjitjalengka Historical X Komunitas Abeng",
-      imageUrl: "https://picsum.photos/200/300",
-    },
-    {
-      id: 4,
-      title: "Tjitjalengka Historical X Komunitas Aleut",
-      imageUrl: "https://picsum.photos/200/300",
-    },
-  ];
-
   return (
-    <div className="container mx-auto py-10 mt-20 px-4 sm:px-6 lg:px-8 max-w-7xl">
+    <div className="container mx-auto py-10 mt-20 px-4 sm:px-6 lg:px-8 max-w-7xl h-screen">
       <h2 className="text-2xl sm:text-3xl font-bold mb-8 text-center">
         Galeri Dokumentasi Kegiatan
       </h2>
       <div className="grid grid-cols-1  md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-        {galleryItems.map((item, index) => (
+        {documentationGallery.map((item, index) => (
           <div
             key={index}
             className="rounded-xl overflow-hidden shadow-md hover:shadow-lg transition transform hover:scale-105 duration-300 bg-white"
           >
             <div className="w-full h-48  aspect-[4/3] ">
               <img
-                src={item.imageUrl}
+                src={item.thumbnail}
                 alt={item.title}
                 className="w-full h-full object-cover object-center"
               />

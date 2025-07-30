@@ -65,9 +65,7 @@ const MaintenancePage = () => {
           </div>
         </div>
       ) : (
-        <p className="text-green-600 font-semibold mb-6">
-          Situs kembali online! 🎉
-        </p>
+        <p className="text-green-600 font-semibold mb-6">Mohon tunggu ya!</p>
       )}
 
       <div className="bg-orange-500 text-white px-4 py-2 rounded-full mb-6 flex items-center justify-center gap-2">
